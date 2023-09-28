@@ -1,7 +1,7 @@
 "use client";
 
-import { ISocial_Icons } from "@/config";
-import { socialsIcons } from "@/interface";
+import { socialsIcons } from "@/config";
+import { ISocial_Icons } from "@/interface";
 import {
   Box,
   useColorMode,
@@ -25,36 +25,34 @@ export default function Footer() {
   const { colorMode } = useColorMode();
 
   return (
-    <>
-      <Box bg={colorMode !== "dark" ? "gray.50" : "gray.900"}>
-        <Divider />
-        <Container maxW={"container.xl"}>
-          <Flex
-            align={"center"}
-            py={"8px"}
-            gap={"10px"}
-            justify={"space-between"}
-            direction={{ sm: "column", md: "row" }}
-          >
-            <Text fontSize={"1xl"} fontWeight={"normal"} textAlign={"center"}>
-              © {new Date().getFullYear()} Rof1yev. Barcha huquqlar himoyalangan
-            </Text>
-            <Flex gap={"10px"}>
-              {socialsIcons.map(({ title, link, id }: ISocial_Icons) => (
-                <Link key={id} href={link} target="_blank">
-                  <IconButton
-                    aria-label={title}
-                    icon={icons[id - 1]}
-                    borderRadius={"50%"}
-                    boxShadow="sm"
-                    p={"1"}
-                  />
-                </Link>
-              ))}
-            </Flex>
+    <Box as="footer" bg={colorMode !== "dark" ? "gray.50" : "gray.900"}>
+      <Divider />
+      <Container maxW={"container.xl"}>
+        <Flex
+          align={"center"}
+          py={"8px"}
+          gap={"10px"}
+          justify={"space-between"}
+          direction={{ sm: "column", md: "row" }}
+        >
+          <Text fontSize={"1xl"} fontWeight={"normal"} textAlign={"center"}>
+            © {new Date().getFullYear()} Rof1yev. Barcha huquqlar himoyalangan
+          </Text>
+          <Flex gap={"10px"}>
+            {socialsIcons.map(({ title, link, id }: ISocial_Icons) => (
+              <Link key={id} href={link} target="_blank">
+                <IconButton
+                  aria-label={title}
+                  icon={icons[id - 1]}
+                  borderRadius={"50%"}
+                  boxShadow="sm"
+                  p={"1"}
+                />
+              </Link>
+            ))}
           </Flex>
-        </Container>
-      </Box>
-    </>
+        </Flex>
+      </Container>
+    </Box>
   );
 }

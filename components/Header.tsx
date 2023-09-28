@@ -11,18 +11,22 @@ import {
 } from "@chakra-ui/react";
 import Image from "next/image";
 import { BsMoonStarsFill } from "react-icons/bs";
-import { FaSun, FaBars, FaArrowRight } from "react-icons/fa";
+import { FaSun, FaBars, FaArrowRight, FaHeart } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import Link from "next/link";
 import logoWhite from "@/assets/logo-white.png";
 import { useRouter } from "next/navigation";
+import { useStateContext } from "@/context/StateContext";
 
 export default function Header() {
   const router = useRouter();
   const { colorMode, toggleColorMode } = useColorMode();
 
+  const { toggleSidebar } = useStateContext();
+
   return (
     <Box
+      as="header"
       bg={colorMode !== "dark" ? "gray.50" : "gray.900"}
       pos={"fixed"}
       width={"100%"}
@@ -38,6 +42,7 @@ export default function Header() {
               placeItems={"center"}
               p={"1"}
               aria-label="Menu Icon"
+              onClick={toggleSidebar}
             >
               <FaBars />
             </Button>
@@ -65,6 +70,14 @@ export default function Header() {
             </Flex>
           </Flex>
           <Flex gap={"10px"}>
+            <Button
+              display={{ sm: "none", md: "flex" }}
+              alignItems={"center"}
+              colorScheme={colorMode === "dark" ? "teal" : "gray"}
+              leftIcon={<FaHeart style={{ color: "crimson" }} />}
+            >
+              <Link href={`https://t.me/rof1yev/`}>Sponsor</Link>
+            </Button>
             <Button
               colorScheme="gray"
               variant="ghost"
