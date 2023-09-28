@@ -14,3 +14,8 @@ export interface ISidebar_Items {
   text: string;
   route: string;
 }
+
+export interface IHome_Card_Info {
+  title: string;
+  stat: number;
+}

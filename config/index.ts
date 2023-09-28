@@ -1,4 +1,4 @@
-import { ISidebar_Items, ISocial_Icons } from "@/interface";
+import { ISidebar_Items, ISocial_Icons, IHome_Card_Info } from "@/interface";
 
 export const socialsIcons: ISocial_Icons[] = [
   {
@@ -43,5 +43,20 @@ export const sidebarItem: ISidebar_Items[] = [
     id: 5,
     text: "FAQ",
     route: "/faq",
+  },
+];
+
+export const homeCardInfo: IHome_Card_Info[] = [
+  {
+    title: "Kurslar",
+    stat: 5,
+  },
+  {
+    title: "Loyihalar",
+    stat: 10,
+  },
+  {
+    title: "O'quvchilar",
+    stat: 100,
   },
 ];
