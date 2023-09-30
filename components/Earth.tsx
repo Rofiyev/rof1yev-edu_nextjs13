@@ -21,8 +21,8 @@ export default function Earth() {
   return (
     <Globe
       ref={globeEl}
-      width={270}
-      height={270}
+      width={300}
+      height={300}
       globeImageUrl={
         colorMode === "dark" ? earth_night_img.src : earth_light_img.src
       }

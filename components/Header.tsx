@@ -11,7 +11,8 @@ import {
 } from "@chakra-ui/react";
 import Image from "next/image";
 import { BsMoonStarsFill } from "react-icons/bs";
-import { FaSun, FaBars, FaArrowRight, FaHeart } from "react-icons/fa";
+import { FaSun, FaArrowRight, FaHeart } from "react-icons/fa";
+import { CgMenuLeft } from "react-icons/cg";
 import { MdEmail } from "react-icons/md";
 import Link from "next/link";
 import logoWhite from "@/assets/logo-white.png";
@@ -21,7 +22,6 @@ import { useStateContext } from "@/context/StateContext";
 export default function Header() {
   const router = useRouter();
   const { colorMode, toggleColorMode } = useColorMode();
-
   const { toggleSidebar } = useStateContext();
 
   return (
@@ -30,7 +30,7 @@ export default function Header() {
       bg={colorMode !== "dark" ? "gray.50" : "gray.900"}
       pos={"fixed"}
       width={"100%"}
-      zIndex={"100"}
+      zIndex={"1002"}
     >
       <Container maxW={"container.xl"}>
         <Flex align={"center"} justify={"space-between"}>
@@ -44,7 +44,7 @@ export default function Header() {
               aria-label="Menu Icon"
               onClick={toggleSidebar}
             >
-              <FaBars />
+              <CgMenuLeft size={'20px'} />
             </Button>
             <Flex
               align={"center"}

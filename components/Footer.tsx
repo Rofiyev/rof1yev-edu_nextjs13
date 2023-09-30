@@ -25,7 +25,10 @@ export default function Footer() {
   const { colorMode } = useColorMode();
 
   return (
-    <Box as="footer" bg={colorMode !== "dark" ? "gray.50" : "gray.900"}>
+    <Box
+      as="footer"
+      bg={colorMode !== "dark" ? "gray.50" : "gray.900"}
+    >
       <Divider />
       <Container maxW={"container.xl"}>
         <Flex

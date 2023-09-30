@@ -47,7 +47,7 @@ export default function Sidebar() {
       display={"flex"}
       flexDirection={"column"}
       justifyContent={"space-between"}
-      zIndex={"10"}
+      zIndex={"1001"}
     >
       <List spacing={3} p={"5"} pt={"32"}>
         {sidebarItem.map(({ id, route, text }: ISidebar_Items) => (
