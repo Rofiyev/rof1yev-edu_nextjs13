@@ -1,5 +1,4 @@
 import { Box } from "@chakra-ui/react";
-import "@/styles/loader.css";
 
 const Loading = () => {
   return (

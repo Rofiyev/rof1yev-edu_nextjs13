@@ -14,13 +14,14 @@
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "framer-motion": "^10.16.4",
-    "i": "^0.3.7",
     "next": "latest",
     "nextjs-progressbar": "^0.0.16",
     "npm": "^10.1.0",
     "react": "latest",
     "react-dom": "latest",
-    "react-icons": "^4.11.0"
+    "react-globe.gl": "^2.25.0",
+    "react-icons": "^4.11.0",
+    "three": "^0.157.0"
   },
   "devDependencies": {
     "@types/node": "latest",

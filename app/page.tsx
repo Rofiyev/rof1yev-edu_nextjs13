@@ -1,6 +1,6 @@
 "use client";
 
-import { ContentWrapper } from "@/components";
+import { ContentWrapper, Earth } from "@/components";
 import {
   Box,
   Card,
@@ -12,11 +12,9 @@ import {
   Stat,
   StatLabel,
   StatNumber,
-  useColorModeValue,
 } from "@chakra-ui/react";
 import Image from "next/image";
 import fon_javascript from "@/assets/javascript.png";
-import codeImg from "@/assets/code.png";
 import { homeCardInfo } from "@/config";
 import { IHome_Card_Info } from "@/interface";
 import { LuLayoutList } from "react-icons/lu";
@@ -135,17 +133,11 @@ export default function Home() {
                     </SimpleGrid>
                   </Box>
                 </Box>
-                <Box display={{ sm: "none", lg: "block" }}>
-                  <Image
-                    src={codeImg}
-                    width={230}
-                    height={120}
-                    loading="lazy"
-                    alt="Code image"
-                    style={{
-                      objectFit: "contain",
-                    }}
-                  />
+                <Box
+                  display={{ sm: "none", lg: "flex" }}
+                  sx={{ cursor: "grab" }}
+                >
+                  <Earth />
                 </Box>
               </Flex>
             </CardBody>

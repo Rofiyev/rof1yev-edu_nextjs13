@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import { Providers } from "./providers";
 import { Footer, Header, Sidebar } from "@/components";
 import { Flex } from "@chakra-ui/react";
+import "@/styles/globals.css";
 
 const poppins = Poppins({ subsets: ["latin-ext"], weight: "500" });
 
