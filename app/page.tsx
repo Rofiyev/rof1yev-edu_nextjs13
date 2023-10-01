@@ -16,6 +16,9 @@ import {
   Heading,
   Button,
   Icon,
+  Container,
+  FormControl,
+  Input,
 } from "@chakra-ui/react";
 import Image from "next/image";
 import fon_javascript from "@/assets/javascript.png";
@@ -31,6 +34,8 @@ import { HiOutlineStatusOnline } from "react-icons/hi";
 import { FaLocationDot, FaPeopleGroup } from "react-icons/fa6";
 import { GiLevelEndFlag } from "react-icons/gi";
 import { RiChatVoiceLine } from "react-icons/ri";
+import { BsCheck2 } from "react-icons/bs";
+import { FormEvent, ChangeEvent, useState } from "react";
 
 const icons: JSX.Element[] = [
   <LuLayoutList fontSize={"2.8rem"} key={1} />,
@@ -40,6 +45,12 @@ const icons: JSX.Element[] = [
 
 export default function Home() {
   const { colorMode } = useColorMode();
+
+  const [email, setEmail] = useState<string>("");
+  const [state, setState] = useState<"initial" | "submitting" | "success">(
+    "initial"
+  );
+  const [error, setError] = useState<boolean>(false);
 
   const advantage_icons: JSX.Element[] = [
     <Icon
@@ -336,6 +347,93 @@ export default function Home() {
           </Box>
         </Box>
         {/* Testimonials */}
+
+        {/*  */}
+        <Container
+          maxW={"lg"}
+          bg={colorMode === "light" ? "gray.100" : "gray.700"}
+          boxShadow={"xl"}
+          rounded={"lg"}
+          p={6}
+        >
+          <Heading
+            as={"h2"}
+            fontSize={{ base: "xl", sm: "xl" }}
+            textAlign={"center"}
+            fontFamily={"inherit"}
+            mb={5}
+          >
+            So`ngi xabarlarimiz uchun obuna bo`ling!
+          </Heading>
+          <Stack
+            direction={{ base: "column", md: "row" }}
+            as={"form"}
+            spacing={"12px"}
+            onSubmit={(e: FormEvent) => {
+              e.preventDefault();
+              setError(false);
+              setState("submitting");
+
+              // remove this code and implement your submit logic right here
+              setTimeout(() => {
+                if (email === "fail@example.com") {
+                  setError(true);
+                  setState("initial");
+                  return;
+                }
+
+                setState("success");
+              }, 1000);
+            }}
+          >
+            <FormControl>
+              <Input
+                variant={"solid"}
+                borderWidth={1}
+                color={colorMode === "dark" ? "white" : "gray.800"}
+                _placeholder={{
+                  color: "gray.400",
+                }}
+                borderColor={colorMode === "light" ? "gray.300" : "gray.700"}
+                id={"email"}
+                type={"email"}
+                required
+                placeholder={"Your Email"}
+                aria-label={"Your Email"}
+                value={email}
+                disabled={state !== "initial"}
+                onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                  setEmail(e.target.value)
+                }
+              />
+            </FormControl>
+            <FormControl w={{ base: "100%", md: "40%" }}>
+              <Button
+                colorScheme={state === "success" ? "green" : "teal"}
+                isLoading={state === "submitting"}
+                w="100%"
+                type={state === "success" ? "button" : "submit"}
+              >
+                {state === "success" ? (
+                  <BsCheck2 fontSize={"20px"} />
+                ) : (
+                  "Submit"
+                )}
+              </Button>
+            </FormControl>
+          </Stack>
+          <Text
+            mt={2}
+            textAlign={"center"}
+            color={error ? "red.500" : "gray.500"}
+          >
+            {error
+              ? "Oh, xatolik yuz berdi! 😢 Keyinroq qayta urinib ko`ring."
+              : "Siz hech qanday spam olmaysiz!"}
+          </Text>
+        </Container>
+
+        {/*  */}
       </Box>
     </ContentWrapper>
   );
