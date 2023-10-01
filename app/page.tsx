@@ -319,7 +319,7 @@ export default function Home() {
           {/*  */}
 
           {/* Testimonials */}
-          <Box mt={20}>
+          <Box my={20}>
             <Flex mb="4">
               <Text
                 fontSize={"xx-large"}

@@ -4,6 +4,7 @@ import { Providers } from "./providers";
 import { Footer, Header, Sidebar } from "@/components";
 import { Flex } from "@chakra-ui/react";
 import "@/styles/globals.css";
+import "react-multi-carousel/lib/styles.css";
 
 const poppins = Poppins({ subsets: ["latin-ext"], weight: "500" });
 
