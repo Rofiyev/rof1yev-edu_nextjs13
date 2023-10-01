@@ -398,8 +398,8 @@ export default function Home() {
                 id={"email"}
                 type={"email"}
                 required
-                placeholder={"Your Email"}
-                aria-label={"Your Email"}
+                placeholder={"Email manzilingiz"}
+                aria-label={"Email manzilingiz"}
                 value={email}
                 disabled={state !== "initial"}
                 onChange={(e: ChangeEvent<HTMLInputElement>) =>
@@ -417,7 +417,7 @@ export default function Home() {
                 {state === "success" ? (
                   <BsCheck2 fontSize={"20px"} />
                 ) : (
-                  "Submit"
+                  "Yuborish"
                 )}
               </Button>
             </FormControl>
@@ -432,7 +432,6 @@ export default function Home() {
               : "Siz hech qanday spam olmaysiz!"}
           </Text>
         </Container>
-
         {/*  */}
       </Box>
     </ContentWrapper>
