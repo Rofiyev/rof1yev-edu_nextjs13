@@ -33,8 +33,8 @@ export interface IHomeAdvantage {
   desc: string;
 }
 
-export interface IQuations {
+export interface IQuestions {
   id: number;
-  quation: string;
+  question: string;
   answer: string;
 }

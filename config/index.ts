@@ -4,7 +4,7 @@ import {
   IHome_Card_Info,
   IHomeManual,
   IHomeAdvantage,
-  IQuations
+  IQuestions,
 } from "@/interface";
 import login_image from "@/assets/login.png";
 import courses_image from "@/assets/courses.png";
@@ -122,52 +122,52 @@ export const homeAdvantage: IHomeAdvantage[] = [
   },
 ];
 
-export const quationsData: IQuations[] = [
+export const questionsData: IQuestions[] = [
   {
     id: 1,
-    quation: "Kursni qanday boshlash mumkin?",
+    question: "Kursni qanday boshlash mumkin?",
     answer:
       "Ro'yxatdan o'tish kerak. Keyin xohlagan kursga kirish imkoniyati mavjud bo'ladi.",
   },
   {
     id: 2,
-    quation: "Kursni qaysi vaqtda boshlanadi?",
+    question: "Kursni qaysi vaqtda boshlanadi?",
     answer:
       "Hech qanday vaqt belgilanmagan. Xohlagan vaqt boshlash mumkin bo'ladi.",
   },
   {
     id: 3,
-    quation: "Kursga kirish uchun qancha vaqt ajratilgan?",
+    question: "Kursga kirish uchun qancha vaqt ajratilgan?",
     answer:
       "Hech qanday vaqt cheklovi mavjud emas! Sizga kursga foydalanish huquqini bir umrga beramiz.",
   },
   {
     id: 4,
-    quation: "Kursni bitirib nimalarga ega bo'laman?",
+    question: "Kursni bitirib nimalarga ega bo'laman?",
     answer:
       "Sizga kursni tugatib sertifikat yoki shunga o'xshash tasdiqlovchi nimadur berolmaymiz. Sizga bilim va portfolion uchun amaliy loyihalar taqdim etamiz holos!",
   },
   {
     id: 5,
-    quation: "Platformadagi yangiliklarni qanday xabardor bo'lishim mumkin?",
+    question: "Platformadagi yangiliklarni qanday xabardor bo'lishim mumkin?",
     answer:
       "Bizning telegram kanalimizga obuna bo'lsangiz kifoya, t.me/rofiyevdilshod",
   },
   {
     id: 6,
-    quation: "Hamkorlik qilishimiz mumkinmi?",
+    question: "Hamkorlik qilishimiz mumkinmi?",
     answer:
       "Xa siz o'zingiz xohlagan miqdorda homiylik qilishingiz mumkin, platformaning rivoji uchun, agarda pullik darsliklar chiqsa sharoit yo'q studentlarga homiylik qilishingiz mumkin bo'ladi. Va yana server, ma'lumotlar bazasi, montaj, dastur ta'minotlar uchun ham o'z hissangizni qo'shishingiz mumkin.",
   },
   {
     id: 7,
-    quation: "Video darsliklarni yuklab olish mumkinmi?",
+    question: "Video darsliklarni yuklab olish mumkinmi?",
     answer:
       "Yo'q videodarsliklarni yuklab ololmaysiz faqat platformani o'zida ko'rishingiz mumkin.",
   },
   {
     id: 8,
-    quation: "Qanday qilib muallif bilan bog'lansam bo'ladi?",
+    question: "Qanday qilib muallif bilan bog'lansam bo'ladi?",
     answer: "Kantakt bo'limiga o'tib xabar yozib qoldirsangiz bo'ladi.",
   },
 ];

@@ -16,7 +16,8 @@ import {
 import Image from "next/image";
 import fon_quations from "@/assets/quations.png";
 import { AddIcon, MinusIcon } from "@chakra-ui/icons";
-import { quationsData } from "@/config";
+import { questionsData } from "@/config";
+import { IQuestions } from "@/interface";
 
 export default function Home() {
   const { colorMode } = useColorMode();
@@ -71,72 +72,78 @@ export default function Home() {
                 allowToggle
                 defaultIndex={[0]}
               >
-                {quationsData.map(({ answer, quation, id }) => (
-                  <AccordionItem key={id} border={"none"}>
-                    {({ isExpanded }) => (
-                      <>
-                        <Box
-                          _hover={{
-                            bg:
+                {questionsData.map(
+                  ({ answer, question: question, id }: IQuestions) => (
+                    <AccordionItem key={id} border={"none"}>
+                      {({ isExpanded }) => (
+                        <>
+                          <Box
+                            _hover={{
+                              bg:
+                                colorMode === "dark"
+                                  ? "rgba(53, 66, 88, 0.7)"
+                                  : "rgba(237, 242, 247, 0.5)",
+                            }}
+                            bg={
                               colorMode === "dark"
-                                ? "rgba(53, 66, 88, 0.7)"
-                                : "rgba(237, 242, 247, 0.5)",
-                          }}
-                          bg={
-                            colorMode === "dark"
-                              ? "whiteAlpha.100"
-                              : "rgba(237, 242, 247, 0.5)"
-                          }
-                          borderRadius={"6px"}
-                        >
-                          <AccordionButton display={"flex"} gap={"10px"}>
-                            {isExpanded ? (
-                              <Flex
-                                borderRadius={"full"}
-                                bg={colorMode === "dark" ? "white" : "gray.700"}
-                                height={"5"}
-                                width={"5"}
-                                align={"center"}
-                                justify={"center"}
-                              >
-                                <MinusIcon
-                                  fontSize="12px"
-                                  color={
-                                    colorMode === "dark" ? "gray.700" : "white"
+                                ? "whiteAlpha.100"
+                                : "rgba(237, 242, 247, 0.5)"
+                            }
+                            borderRadius={"6px"}
+                          >
+                            <AccordionButton display={"flex"} gap={"10px"}>
+                              {isExpanded ? (
+                                <Flex
+                                  borderRadius={"full"}
+                                  bg={
+                                    colorMode === "dark" ? "white" : "gray.700"
                                   }
-                                />
-                              </Flex>
-                            ) : (
-                              <Flex
-                                borderRadius={"full"}
-                                bg={
-                                  colorMode === "dark"
-                                    ? "gray.700"
-                                    : "transparent"
-                                }
-                                height={"5"}
-                                width={"5"}
-                                border={
-                                  colorMode === "dark"
-                                    ? "1px solid #fff"
-                                    : "1px solid #354258"
-                                }
-                                align={"center"}
-                                justify={"center"}
-                              >
-                                <AddIcon fontSize="10px" />
-                              </Flex>
-                            )}
-                            <Box as="span" flex="1" textAlign="left">
-                              {quation}
-                            </Box>
-                          </AccordionButton>
-                        </Box>
-                        <AccordionPanel pb={4}>{answer}</AccordionPanel>
-                      </>
-                    )}
-                  </AccordionItem>
-                ))}
+                                  height={"5"}
+                                  width={"5"}
+                                  align={"center"}
+                                  justify={"center"}
+                                >
+                                  <MinusIcon
+                                    fontSize="12px"
+                                    color={
+                                      colorMode === "dark"
+                                        ? "gray.700"
+                                        : "white"
+                                    }
+                                  />
+                                </Flex>
+                              ) : (
+                                <Flex
+                                  borderRadius={"full"}
+                                  bg={
+                                    colorMode === "dark"
+                                      ? "gray.700"
+                                      : "transparent"
+                                  }
+                                  height={"5"}
+                                  width={"5"}
+                                  border={
+                                    colorMode === "dark"
+                                      ? "1px solid #fff"
+                                      : "1px solid #354258"
+                                  }
+                                  align={"center"}
+                                  justify={"center"}
+                                >
+                                  <AddIcon fontSize="10px" />
+                                </Flex>
+                              )}
+                              <Box as="span" flex="1" textAlign="left">
+                                {question}
+                              </Box>
+                            </AccordionButton>
+                          </Box>
+                          <AccordionPanel pb={4}>{answer}</AccordionPanel>
+                        </>
+                      )}
+                    </AccordionItem>
+                  )
+                )}
               </Accordion>
             </CardBody>
           </Card>
