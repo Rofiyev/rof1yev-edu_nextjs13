@@ -16,13 +16,11 @@
     "framer-motion": "^10.16.4",
     "next": "latest",
     "nextjs-progressbar": "^0.0.16",
-    "nextjs-toploader": "^1.4.2",
     "npm": "^10.1.0",
     "react": "latest",
     "react-dom": "latest",
     "react-globe.gl": "^2.25.0",
     "react-icons": "^4.11.0",
-    "react-multi-carousel": "^2.8.4",
     "react-slick": "^0.29.0",
     "slick-carousel": "^1.8.1",
     "three": "^0.157.0"
