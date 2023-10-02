@@ -16,7 +16,7 @@ import { CgMenuLeft } from "react-icons/cg";
 import { MdEmail } from "react-icons/md";
 import Link from "next/link";
 import logoWhite from "@/assets/logo-white.png";
-import { useRouter } from "next/navigation";
+import { useRouter } from "@/lib/router-events";
 import { useStateContext } from "@/context/StateContext";
 
 export default function Header() {
@@ -30,7 +30,7 @@ export default function Header() {
       bg={colorMode !== "dark" ? "gray.50" : "gray.900"}
       pos={"fixed"}
       width={"100%"}
-      zIndex={"1002"}
+      zIndex={"12"}
     >
       <Container maxW={"container.xl"}>
         <Flex align={"center"} justify={"space-between"}>
@@ -44,7 +44,7 @@ export default function Header() {
               aria-label="Menu Icon"
               onClick={toggleSidebar}
             >
-              <CgMenuLeft size={'20px'} />
+              <CgMenuLeft size={"20px"} />
             </Button>
             <Flex
               align={"center"}

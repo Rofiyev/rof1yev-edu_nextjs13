@@ -16,6 +16,7 @@
     "framer-motion": "^10.16.4",
     "next": "latest",
     "nextjs-progressbar": "^0.0.16",
+    "nextjs-toploader": "^1.4.2",
     "npm": "^10.1.0",
     "react": "latest",
     "react-dom": "latest",

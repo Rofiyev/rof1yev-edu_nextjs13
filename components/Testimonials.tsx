@@ -9,7 +9,6 @@ import {
   Avatar,
   useColorMode,
   Container,
-  Grid,
   GridItem,
   SimpleGrid,
 } from "@chakra-ui/react";

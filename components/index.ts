@@ -5,3 +5,4 @@ export { default as Sidebar } from "./Sidebar";
 export { default as ContentWrapper } from "./ContentWrapper";
 export { default as Earth } from "./Earth";
 export { default as Testimonials } from "./Testimonials";
+export { default as Next13NProgress } from "./Next13NProgress";

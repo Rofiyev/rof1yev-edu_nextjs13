@@ -17,7 +17,8 @@ import { IconType } from "react-icons/lib";
 import { sidebarItem } from "@/config";
 import { ISidebar_Items } from "@/interface";
 import { useStateContext } from "@/context/StateContext";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
+import { useRouter } from "@/lib/router-events";
 
 const socials_icons: IconType[] = [
   ImHome,
@@ -32,7 +33,7 @@ export default function Sidebar() {
   const { push } = useRouter();
   const pathname = usePathname();
 
-  const { showSidebar } = useStateContext();
+  const { showSidebar, toggleSidebar } = useStateContext();
 
   return (
     <Box
@@ -47,7 +48,7 @@ export default function Sidebar() {
       display={"flex"}
       flexDirection={"column"}
       justifyContent={"space-between"}
-      zIndex={"1001"}
+      zIndex={"11"}
     >
       <List spacing={3} p={"5"} pt={"32"}>
         {sidebarItem.map(({ id, route, text }: ISidebar_Items) => (
@@ -66,7 +67,10 @@ export default function Sidebar() {
               (pathname === route && colorMode === "light" ? "gray.100" : "") ||
               (pathname === route && colorMode === "dark" ? "gray.700" : "")
             }
-            onClick={() => push(`${route}`)}
+            onClick={() => {
+              push(`${route}`);
+              toggleSidebar();
+            }}
           >
             <ListIcon
               as={socials_icons[id - 1]}
